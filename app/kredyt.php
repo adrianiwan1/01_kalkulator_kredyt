@@ -6,7 +6,6 @@ $lat = $_REQUEST ['lat'];
 $procent = $_REQUEST ['procent'];
 $result="";
 
-
 if ( ! (isset($kw) && isset($lat) && isset($procent))) {
 	$messages [] = 'Błędne wywołanie aplikacji. Brak jednego z parametrów.';
 }
