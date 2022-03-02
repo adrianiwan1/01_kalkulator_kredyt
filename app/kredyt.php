@@ -1,6 +1,8 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
 
+include _ROOT_PATH.'/app/security/check.php';
+
 $kw = $_REQUEST ['kw'];
 $lat = $_REQUEST ['lat'];
 $procent = $_REQUEST ['procent'];
