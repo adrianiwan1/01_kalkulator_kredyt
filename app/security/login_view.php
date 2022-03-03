@@ -33,8 +33,9 @@ if (isset($messages)) {
 		echo '</ol>';
 	}
 }
-?>
 //TODO:Wyczyścić śmieci zalegające!
+?>
+
 <!-- CSS'y 
 	<form action="/app/security/login.php" method="post">
 		<div class="input-group fluid">
