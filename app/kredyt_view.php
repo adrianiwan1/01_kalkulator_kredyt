@@ -15,8 +15,10 @@
     <fieldset>
         <a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="button small" >Wyloguj</a>
         <form class="pure-form pure-form-stacked" method="POST" action="<?php print(_APP_ROOT); ?>/app/kredyt.php">
-            <legend>Kalkulator kredytu</legend>
+            <legend>Kalkulator kredytu</br>Zalogowano jako: <?php echo $_SESSION['role']  ?></legend>
+            
             <fieldset>
+                
                 <label for="id_kwota">Kwota kredytu:</label>
                 <input id="id_kwota" type="text" name="kw" />
                 <label for="id_lat">Ilosc lat:</label>
@@ -35,7 +37,7 @@
     <?php } ?>
 
     <?php
-//wyświeltenie listy błędów, jeśli istnieją
+
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
 		echo '<ol style="padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';

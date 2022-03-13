@@ -51,7 +51,7 @@ function logic(&$kw,&$lat,&$procent,&$messages, &$result) {
     $lat = intval($lat);
     $procent = intval($procent);
 
-///TODO: Dorobić coś dla usera i coś dla admina tylko!!!
+
     $pr = $procent * 0.01;
 
     $calosc = ($kw * $pr) + $kw;

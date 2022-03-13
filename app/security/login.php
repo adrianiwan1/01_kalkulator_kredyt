@@ -43,7 +43,6 @@ $form = array();
 $messages = array();
 
 getParamsLogin($form);
-
 if (!validationLogin($form, $messages)) {
     include _ROOT_PATH . '/app/security/login_view.php';
 } else {

@@ -23,7 +23,6 @@
 	
 	<?php
 
-//wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
 		echo '<ol style="padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';
@@ -33,21 +32,7 @@ if (isset($messages)) {
 		echo '</ol>';
 	}
 }
-//TODO:Wyczyścić śmieci zalegające!
 ?>
-
-<!-- CSS'y 
-	<form action="/app/security/login.php" method="post">
-		<div class="input-group fluid">
-			<label for="id_login">Login</label>
-			<input type="text" id="id_login" name="login" placeholder="login" />
-
-			<label for="id_passwd">Password</label>
-			<input type="password" id="id_passwd" name="passwd" placeholder="Password" />
-			<input type="submit" value="zaloguj" class="tertiary" />
-		</div>
-	</form>
-	-->
 </body>
 
 </html>
