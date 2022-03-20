@@ -7,7 +7,7 @@
     <title>Kalkulator kredytu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="<?php print(_APP_ROOT);?> /css/styles.css" rel="stylesheet" />
+    <link href="<?php print(_APP_ROOT); ?> /css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
@@ -25,10 +25,12 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -79,18 +81,28 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <!-- <a class="btn btn-primary" href="index.html">Login</a> -->
-                                    <input class="btn btn-success" type="submit" value="rata" />
+                                    <input class="btn btn-success" type="submit" value="Oblicz rate" />
                                 </div>
                             </form>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="col-xl-4 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Rata kredytu wynosi <?php echo strval($result); ?></div>
-                                    
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php
+                        if (isset($messages)) {
+                            if (count($messages) > 0) {
+                                echo '<div class="col-xl-3 col-md-6"><div class="card bg-danger text-white text-center"> <div class="card-body">';
+                                        foreach ($messages as $key => $msg) {
+                                            echo $msg;
+                                        }
+                                        echo '</div></div></div>';
+                            }elseif(isset($result))
+                            {
+                                echo '<div class="col-xl-3 col-md-8"><div class="card bg-success text-white text-center"> <div class="card-body">';
+                                echo 'Rata wynosi '.strval($result).'zł';
+                                echo '</div></div></div>';
+                            }
+                        }
+                        ?>
+
                     </div>
                     <div>
             </main>
@@ -109,7 +121,7 @@
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+    <script src="<?php print(_APP_ROOT); ?>/js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/chart-area-demo.js"></script>
     <script src="assets/demo/chart-bar-demo.js"></script>
