@@ -71,5 +71,4 @@ if(validate($kw, $lat, $procent,$messages))
     logic($kw, $lat, $procent,$messages,$result);
     
 }
-
-include 'kredyt_view.php';
+include _ROOT_PATH .'/app/kredyt_view.php';
