@@ -1,4 +1,18 @@
 <?php
+
+//Skrypt uruchamiający akcję wykonania obliczeń kalkulatora
+// - należy zwrócić uwagę jak znacząco jego rola uległa zmianie
+//   po wstawieniu funkcjonalności do klasy kontrolera
+
+require_once dirname(__FILE__).'/../config.php';
+
+//załaduj kontroler
+require_once $conf->root_path.'/app/KredytCtrl.class.php';
+
+//utwórz obiekt i użyj
+$ctrl = new KredytCtrl();
+$ctrl->process();
+/*
 require_once dirname(__FILE__) . '/../config.php';
 
 include _ROOT_PATH . '/app/security/check.php';
@@ -72,3 +86,4 @@ if(validate($kw, $lat, $procent,$messages))
     
 }
 include _ROOT_PATH .'/app/kredyt_view.php';
+*/
