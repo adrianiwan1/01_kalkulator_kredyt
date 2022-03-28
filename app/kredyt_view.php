@@ -66,17 +66,17 @@
                     </ol>
                     <div class="row">
                         <div class="col-xl-6">
-                            <form method="POST" action="<?php print(_APP_ROOT); ?>/app/kredyt.php">
+                            <form method="POST" action="{$conf->app_url}/app/kredyt.php">
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" type="text" id="id_kwota" name="kw" placeholder="Kwota" />
+                                    <input class="form-control" type="text" id="id_kwota" name="kw" placeholder="Kwota" value="{$form->kw}"/>
                                     <label for="id_login">kwota</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" type="text" id="id_lat" name="lat" placeholder="ilosc lat" />
+                                    <input class="form-control" type="text" id="id_lat" name="lat" placeholder="ilosc lat" value="{$form->procent}" />
                                     <label for="id_login">ilosc lat</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" type="text" id="id_kwota" name="procent" placeholder="procent" />
+                                    <input class="form-control" type="text" id="id_kwota" name="procent" placeholder="procent" value="{$form->lat}" />
                                     <label for="id_login">procent</label>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">

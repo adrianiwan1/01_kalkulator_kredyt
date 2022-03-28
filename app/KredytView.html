@@ -1,0 +1,90 @@
+{extends file=$conf->root_path|cat:"/templates/main.html"}
+
+{block name=footer}
+<footer class="py-4 bg-light mt-auto">
+	<div class="container-fluid px-4">
+		<div class="d-flex align-items-center justify-content-between small">
+			<div class="text-muted">Copyright &copy; Startboostrap</div>
+			<div>
+
+				<a href="https://startbootstrap.com/template/sb-admin">Na licencji MIT</a>
+			</div>
+		</div>
+	</div>
+</footer>{/block}
+
+{block name=content}
+
+<h2 class="content-head is-center">Kalkulator</h2>
+
+<div id="layoutSidenav_content">
+	<main>
+		<div class="container-fluid px-4">
+			<h1 class="mt-4">Kalulator kredytowy</h1>
+			<ol class="breadcrumb mb-4">
+				<li class="breadcrumb-item active">Główne okno panelu</li>
+			</ol>
+			<div class="row">
+				<div class="col-xl-6">
+					<form class="pure-form pure-form-stacked" action="{$conf->app_url}/app/kredyt.php" method="post">
+
+
+						<div class="form-floating mb-3">
+							<input class="form-control" type="text" id="id_kwota" name="kw" placeholder="Kwota"
+								value="{$form->kw}" />
+							<label for="id_login">kwota</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input class="form-control" type="text" id="id_lat" name="lat" placeholder="ilosc lat"
+								value="{$form->procent}" />
+							<label for="id_login">ilosc lat</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input class="form-control" type="text" id="id_kwota" name="procent" placeholder="procent"
+								value="{$form->lat}" />
+							<label for="id_login">procent</label>
+						</div>
+						<div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+							<!-- <a class="btn btn-primary" href="index.html">Login</a> -->
+							<input class="btn btn-success" type="submit" value="Oblicz rate" />
+						</div>
+				</div>
+
+				<div class="l-box-lrg pure-u-1 pure-u-med-3-5">
+
+					{* wyświeltenie listy błędów, jeśli istnieją *}
+					{if $msgs->isError()}
+					<h4>Wystąpiły błędy: </h4>
+					<ol class="err">
+						{foreach $msgs->getErrors() as $err}
+						{strip}
+						<li>{$err}</li>
+						{/strip}
+						{/foreach}
+					</ol>
+					{/if}
+
+					{* wyświeltenie listy informacji, jeśli istnieją *}
+					{if $msgs->isInfo()}
+					<h4>Informacje: </h4>
+					<ol class="inf">
+						{foreach $msgs->getInfos() as $inf}
+						{strip}
+						<li>{$inf}</li>
+						{/strip}
+						{/foreach}
+					</ol>
+					{/if}
+
+					{if isset($res->result)}
+					<h4>Wynik</h4>
+					<p class="res">
+						{$res->result}
+					</p>
+					{/if}
+
+				</div>
+			</div>
+			
+
+			{/block}
