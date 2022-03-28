@@ -1,5 +1,5 @@
 <?php
-class CalcResult {
-	public $op_name;
+class KredytResult {
+	//public $op_name;
 	public $result;	
 } 

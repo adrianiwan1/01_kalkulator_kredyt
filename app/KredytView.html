@@ -19,20 +19,6 @@
 
             <label for="kw">Ilość lat</label>
 			<input id="lat" type="text" placeholder="lat" name="lat" value="{$form->lat}">
-			
-{if isset($res->op_name)}
-<option value="{$form->op}">ponownie: {$res->op_name}</option>
-<option value="" disabled="true">---</option>
-{/if}
-						<option value="plus">(+) dodaj</option>
-						<option value="minus">(-) odejmij </option>
-						<option value="times">(*) pomnóż</option>
-						<option value="div">(/) podziel</option>
-					</select>
-					
-			<label for="y">Druga liczba</label>
-			<input id="y" type="text" placeholder="wartość y" name="y" value="{$form->y}">
-
 			<button type="submit" class="pure-button">Oblicz</button>
 		</fieldset>
 	</form>

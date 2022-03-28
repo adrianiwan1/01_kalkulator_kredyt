@@ -1,9 +1,4 @@
 <?php
-/*
-require_once dirname(__FILE__).'/config.php';
-include _ROOT_PATH.'/app/kredyt.php';
-*/
-
 require_once dirname(__FILE__).'/config.php';
 
 //przekierowanie przeglądarki klienta (redirect)

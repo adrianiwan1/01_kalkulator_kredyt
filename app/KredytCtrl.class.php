@@ -1,5 +1,5 @@
 <?php
-require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
+require_once $conf->root_path.'/lib/Smarty/Smarty.class.php';
 require_once $conf->root_path.'/lib/Messages.class.php';
 require_once $conf->root_path.'/app/KredytForm.class.php';
 require_once $conf->root_path.'/app/KredytResult.class.php';
@@ -14,8 +14,8 @@ class KredytCtrl
     public function __construct(){
 		//stworzenie potrzebnych obiektów
 		$this->msgs = new Messages();
-		$this->form = new CalcForm();
-		$this->result = new CalcResult();
+		$this->form = new KredytForm();
+		$this->result = new KredytResult();
 		$this->hide_intro = false;
 	}
 
@@ -82,7 +82,7 @@ class KredytCtrl
             //$pr = $procent * 0.01;
 
             $calosc = ($this->form->kw * $this->form->procent) + $this->form->kw;
-            $this->result->result = $calosc/($this->form->lat * 12);			
+            $this->result->result = ($calosc/($this->form->lat * 12));			
 			$this->msgs->addInfo('Wykonano obliczenia.');
 		}
 		

@@ -1,5 +1,5 @@
 <?php
-class CalcForm {
+class KredytForm {
 	public $kw;
 	public $lat;
 	public $procent;
