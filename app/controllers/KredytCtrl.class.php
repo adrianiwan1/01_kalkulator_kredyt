@@ -1,26 +1,28 @@
 <?php
-
+namespace app\controllers;
 //require_once $conf->root_path.'/lib/Smarty/Smarty.class.php';
 //require_once $conf->root_path.'/lib/Messages.class.php';
 //require_once $conf->root_path.'/app/kredyt/KredytForm.class.php';
 //require_once $conf->root_path.'/app/kredyt/KredytResult.class.php';
 
-require_once 'KredytForm.class.php';
-require_once 'KredytResult.class.php';
+//require_once 'KredytForm.class.php';
+//require_once 'KredytResult.class.php';
+
+use app\forms\KredytForm;
+use app\transfer\KredytResult;
+
 
 class KredytCtrl
 {
-	private $msgs;   //wiadomości dla widoku
 	private $form;   //dane formularza (do obliczeń i dla widoku)
 	private $result; //inne dane dla widoku
-	private $hide_intro; //zmienna informująca o tym czy schować intro
+	
 
     public function __construct(){
 		//stworzenie potrzebnych obiektów
-		$this->msgs = new Messages();
-		$this->form = new CalcForm();
-		$this->result = new CalcResult();
-		$this->hide_intro = false;
+		$this->form = new KredytForm();
+		$this->result = new KredytResult();
+		
 	}
 
     public function getParams(){
@@ -34,8 +36,6 @@ class KredytCtrl
 		if (! (isset ( $this->form->kw ) && isset ( $this->form->lat ) && isset ( $this->form->procent ))) {
 			// sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
 			return false; //zakończ walidację z błędem
-		} else { 
-			$this->hide_intro = true; //przyszły pola formularza, więc - schowaj wstęp
 		}
 		
 		// sprawdzenie, czy potrzebne wartości zostały przekazane
