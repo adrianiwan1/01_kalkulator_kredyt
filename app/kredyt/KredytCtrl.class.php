@@ -1,8 +1,10 @@
 <?php
+
 require_once $conf->root_path.'/lib/Smarty/Smarty.class.php';
 require_once $conf->root_path.'/lib/Messages.class.php';
 require_once $conf->root_path.'/app/KredytForm.class.php';
 require_once $conf->root_path.'/app/KredytResult.class.php';
+
 
 class KredytCtrl
 {
