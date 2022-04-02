@@ -1,5 +1,11 @@
 <?php
+// Skrypt kontrolera głównego uruchamiający określoną
+// akcję użytkownika na podstawie przekazanego parametru
+
+//każdy punkt wejścia aplikacji (skrypt uruchamiany bezpośrednio przez klienta) musi dołączać konfigurację
 require_once dirname (__FILE__).'/../config.php';
+
+//1. pobierz nazwę akcji
 
 $action = $_REQUEST['action'];
 
@@ -7,16 +13,16 @@ $action = $_REQUEST['action'];
 switch ($action) {
 	default : // 'calcView'
 	    // załaduj definicję kontrolera
-		include_once $conf->root_path.'/app/calc/KredytCtrl.class.php';
+		include_once $conf->root_path.'/app/kredyt/KredytCtrl.class.php';
 		// utwórz obiekt i uzyj
 		$ctrl = new KredytCtrl ();
 		$ctrl->generateView ();
 	break;
-	case 'kredytCompute' :
+	case 'calcCompute' :
 		// załaduj definicję kontrolera
-		include_once $conf->root_path.'/app/calc/KredytCtrl.class.php';
+		include_once $conf->root_path.'/app/kredyt/KredytCtrl.class.php';
 		// utwórz obiekt i uzyj
-		$ctrl = new KredytCtrl ();
+		$ctrl = new CalcCtrl ();
 		$ctrl->process ();
 	break;
 	case 'action1' :

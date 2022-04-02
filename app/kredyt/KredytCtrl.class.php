@@ -2,8 +2,8 @@
 
 require_once $conf->root_path.'/lib/Smarty/Smarty.class.php';
 require_once $conf->root_path.'/lib/Messages.class.php';
-require_once $conf->root_path.'/app/KredytForm.class.php';
-require_once $conf->root_path.'/app/KredytResult.class.php';
+require_once $conf->root_path.'/app/kredyt/KredytForm.class.php';
+require_once $conf->root_path.'/app/kredyt/KredytResult.class.php';
 
 
 class KredytCtrl
@@ -107,7 +107,7 @@ class KredytCtrl
 		$smarty->assign('form',$this->form);
 		$smarty->assign('res',$this->result);
 		
-		$smarty->display($conf->root_path.'/app/KredytView.html');
+		$smarty->display($conf->root_path.'/app/kredyt/KredytView.html');
 	}
 	
 

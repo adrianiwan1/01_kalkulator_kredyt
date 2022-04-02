@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-02 13:57:36
-  from "C:\xampp\htdocs\01_kalkulator_kredyt\app\KredytView.html" */
+/* Smarty version 3.1.30, created on 2022-04-02 14:11:22
+  from "C:\xampp\htdocs\01_kalkulator_kredyt\app\kredyt\KredytView.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_62483a30779e08_12173778',
+  'unifunc' => 'content_62483d6a086ca8_05735596',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f25cd29bcb74d1cc7fa5c03b7bab3396c65f4f4d' => 
+    '1853b73cde3eda2c897eca37b6733a8baf43b440' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\01_kalkulator_kredyt\\app\\KredytView.html',
-      1 => 1648900636,
+      0 => 'C:\\xampp\\htdocs\\01_kalkulator_kredyt\\app\\kredyt\\KredytView.html',
+      1 => 1648900668,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62483a30779e08_12173778 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62483d6a086ca8_05735596 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44974171662483a3073e0a2_60234794', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_179970782162483d6a035cd5_20137687', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_110746501162483a30778844_51589825', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10850666062483d6a085bc7_32508879', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("/templates/main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'footer'} */
-class Block_44974171662483a3073e0a2_60234794 extends Smarty_Internal_Block
+class Block_179970782162483d6a035cd5_20137687 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -60,7 +60,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_110746501162483a30778844_51589825 extends Smarty_Internal_Block
+class Block_10850666062483d6a085bc7_32508879 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -119,8 +119,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </ol>
                     <div class="row">
                         <div class="col-xl-6">
-                            <form method="POST" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/app/kredyt.php">
+                            <form method="POST" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+KredytCompute">
                                 <div class="form-floating mb-3">
                                     <input class="form-control" type="text" id="id_kwota" name="kw" placeholder="Kwota" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->kw;?>
 "/>
