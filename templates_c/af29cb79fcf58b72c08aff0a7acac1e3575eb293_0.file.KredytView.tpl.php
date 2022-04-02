@@ -1,6 +1,48 @@
-{extends file=$conf->root_path|cat:"/templates/main.html"}
+<?php
+/* Smarty version 3.1.30, created on 2022-04-02 15:25:06
+  from "C:\xampp\htdocs\01_kalkulator_kredyt\app\views\KredytView.tpl" */
 
-{block name=footer}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_62484eb249fc18_70395464',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'af29cb79fcf58b72c08aff0a7acac1e3575eb293' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\01_kalkulator_kredyt\\app\\views\\KredytView.tpl',
+      1 => 1648905883,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:main.tpl' => 1,
+  ),
+),false)) {
+function content_62484eb249fc18_70395464 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_24935444562484eb244a1e3_69675633', 'footer');
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92091072162484eb249dd94_96174404', 'content');
+$_smarty_tpl->inheritance->endChild();
+$_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
+}
+/* {block 'footer'} */
+class Block_24935444562484eb244a1e3_69675633 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
 <footer class="py-4 bg-light mt-auto">
 	<div class="container-fluid px-4">
 		<div class="d-flex align-items-center justify-content-between small">
@@ -14,9 +56,16 @@
 </div>
 </div>
 </div>
-{/block}
+<?php
+}
+}
+/* {/block 'footer'} */
+/* {block 'content'} */
+class Block_92091072162484eb249dd94_96174404 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
-{block name=content}
  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3">Kalkulator kredytowy</a>
@@ -35,7 +84,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="<?php echo '<?php ';?>print(_APP_ROOT); <?php echo '?>';?>/app/security/logout.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -57,7 +106,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        <?php echo $_SESSION['role'] ?>
+                        <?php echo '<?php ';?>echo $_SESSION['role'] <?php echo '?>';?>
                     </div>
                 </nav>
             </div>
@@ -71,17 +120,21 @@
                     </ol>
                     <div class="row">
                         <div class="col-xl-6">
-                            <form method="POST" action="{$conf->action_url}KredytCompute">
+                            <form method="POST" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+KredytCompute">
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" type="text" id="id_kwota" name="kw" placeholder="Kwota" value="{$form->kw}"/>
+                                    <input class="form-control" type="text" id="id_kwota" name="kw" placeholder="Kwota" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->kw;?>
+"/>
                                     <label for="id_login">kwota</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" type="text" id="id_lat" name="lat" placeholder="ilosc lat" value="{$form->procent}" />
+                                    <input class="form-control" type="text" id="id_lat" name="lat" placeholder="ilosc lat" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->procent;?>
+" />
                                     <label for="id_login">ilosc lat</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" type="text" id="id_kwota" name="procent" placeholder="procent" value="{$form->lat}" />
+                                    <input class="form-control" type="text" id="id_kwota" name="procent" placeholder="procent" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->lat;?>
+" />
                                     <label for="id_login">procent</label>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
@@ -91,37 +144,58 @@
                             </form>
                         </div>
 							
-							{* wyświeltenie listy błędów, jeśli istnieją *}
-						{if $msgs->isError()}
+							
+						<?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
 						<div class="col-xl-3 col-md-6"><div class="card bg-danger text-white text-center"> <div class="card-body">
 						<ol class="err">
-							{foreach $msgs->getErrors() as $err}
-							{strip}
-							<li>{$err}</li>
-							{/strip}
-							{/foreach}
+							<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getErrors(), 'err');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
+?>
+							<li><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
+</li>
+							<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
 						</ol>
 						</div></div></div>
-						{/if}
+						<?php }?>
 
-						{* wyświeltenie listy informacji, jeśli istnieją *}
-						{if $msgs->isInfo()}
+						
+						<?php if ($_smarty_tpl->tpl_vars['msgs']->value->isInfo()) {?>
 						<div class="col-xl-3 col-md-6"><div class="card bg-warning text-white text-center"> <div class="card-body">
-							{foreach $msgs->getInfos() as $inf}
-							{strip}
-							<li>{$inf}</li>
-							{/strip}
-							{/foreach}
+							<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'inf');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['inf']->value) {
+?>
+							<li><?php echo $_smarty_tpl->tpl_vars['inf']->value;?>
+</li>
+							<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
 						</ol>
 						</div></div></div>
-						{/if}
+						<?php }?>
 
-						{if isset($res->result)}
+						<?php if (isset($_smarty_tpl->tpl_vars['res']->value->result)) {?>
 						<div class="col-xl-3 col-md-8"><div class="card bg-success text-white text-center"> <div class="card-body">
-							{round($res->result,2)} zł
+							<?php echo round($_smarty_tpl->tpl_vars['res']->value->result,2);?>
+ zł
 						</div></div></div>
-						{/if}
+						<?php }?>
                     </div>
 				</div>
 				</main>
-			{/block}
+			<?php
+}
+}
+/* {/block 'content'} */
+}
