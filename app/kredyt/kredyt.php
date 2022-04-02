@@ -4,7 +4,7 @@
 // - należy zwrócić uwagę jak znacząco jego rola uległa zmianie
 //   po wstawieniu funkcjonalności do klasy kontrolera
 
-require_once dirname(__FILE__).'/../config.php';
+//require_once dirname(__FILE__).'/../config.php';
 
 //załaduj kontroler
 require_once $conf->root_path.'/app/KredytCtrl.class.php';
