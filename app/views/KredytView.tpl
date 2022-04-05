@@ -35,7 +35,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="{$conf->action_url}logout">Logout</a></li>
                 </ul>
             </li>
         </ul>

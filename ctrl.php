@@ -15,22 +15,26 @@ switch ($action) {
 	    // załaduj definicję kontrolera
 		
 		// utwórz obiekt i uzyj
+		include 'check.php';
 		$ctrl = new app\controllers\KredytCtrl();
 		$ctrl->generateView ();
+	break;
+	case 'login' :
+		
+		$ctrl = new app\controllers\LoginCtrl();
+		$ctrl->doLogin();
 	break;
 	case 'KredytCompute' :
 		// załaduj definicję kontrolera
 		
 		// utwórz obiekt i uzyj
+		
 		$ctrl = new app\controllers\KredytCtrl();
 		$ctrl->process ();
 	break;
-	case 'action1' :
-		// zrób coś innego ...
-		print('hello');
-	break;
-	case 'action2' :
-		// zrób coś innego ...
-		print('goodbye');
+	case 'logout' :
+		include 'check.php';  // KONTROLA
+		$ctrl = new app\controllers\LoginCtrl();
+		$ctrl->doLogout();
 	break;
 }

@@ -26,9 +26,9 @@ class KredytCtrl
 	}
 
     public function getParams(){
-		$this->form->kw = isset($_REQUEST ['kw']) ? $_REQUEST ['kw'] : null;
-		$this->form->lat = isset($_REQUEST ['lat']) ? $_REQUEST ['lat'] : null;
-		$this->form->procent = isset($_REQUEST ['procent']) ? $_REQUEST ['procent'] : null;
+		$this->form->kw = getFromRequest('kw');
+		$this->form->lat = getFromRequest('lat');
+		$this->form->procent = getFromRequest('procent');
 	}
 
     public function validate() {
@@ -96,12 +96,14 @@ class KredytCtrl
     public function generateView(){
 		
 		
-		getSmarty()->assign('page_title','Kalkulator kredytowy z folderami');
-		getSmarty()->assign('page_description','Aplikacja z jednym "punktem wejścia". Zmiana w postaci nowej struktury foderów, skryptu inicjalizacji oraz pomocniczych funkcji.');
-		getSmarty()->assign('page_header','Kontroler główny');
-					
+		global $user;
+
+		getSmarty()->assign('user',$user);
+				
+		getSmarty()->assign('page_title','Super kalkulator');
+
 		getSmarty()->assign('form',$this->form);
-		getSmarty()->assign('res',$this->result);
+		getSmarty()->assign('res',$this->result);;
 		
 		getSmarty()->display('KredytView.tpl');
 	}

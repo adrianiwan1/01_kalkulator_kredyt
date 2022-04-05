@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-02 15:25:06
+/* Smarty version 3.1.30, created on 2022-04-05 10:51:30
   from "C:\xampp\htdocs\01_kalkulator_kredyt\app\views\KredytView.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_62484eb249fc18_70395464',
+  'unifunc' => 'content_624c03128b8a91_19564077',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af29cb79fcf58b72c08aff0a7acac1e3575eb293' => 
     array (
       0 => 'C:\\xampp\\htdocs\\01_kalkulator_kredyt\\app\\views\\KredytView.tpl',
-      1 => 1648905883,
+      1 => 1649148668,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_62484eb249fc18_70395464 (Smarty_Internal_Template $_smarty_tpl) {
+function content_624c03128b8a91_19564077 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_24935444562484eb244a1e3_69675633', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1136221601624c031285ef27_97147813', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92091072162484eb249dd94_96174404', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1279130227624c03128b5ed3_74057051', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_24935444562484eb244a1e3_69675633 extends Smarty_Internal_Block
+class Block_1136221601624c031285ef27_97147813 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_92091072162484eb249dd94_96174404 extends Smarty_Internal_Block
+class Block_1279130227624c03128b5ed3_74057051 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -84,7 +84,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="<?php echo '<?php ';?>print(_APP_ROOT); <?php echo '?>';?>/app/security/logout.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+logout">Logout</a></li>
                 </ul>
             </li>
         </ul>
