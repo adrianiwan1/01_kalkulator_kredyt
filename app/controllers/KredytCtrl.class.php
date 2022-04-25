@@ -68,7 +68,7 @@ class KredytCtrl
 	}
 }
 
-    public function process(){
+    public function action_KredytCompute(){
 
 		$this->getparams();
 		
@@ -96,6 +96,11 @@ class KredytCtrl
 				
 		}
 		
+		$this->generateView();
+	}
+
+	public function action_KredytShow(){
+		getMessages()->addInfo('Witaj w kalkulatorze');
 		$this->generateView();
 	}
 
