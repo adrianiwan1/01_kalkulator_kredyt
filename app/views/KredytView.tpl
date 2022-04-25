@@ -47,9 +47,13 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Okno główne</div>
-                            <a class="nav-link">
+                            <a class="nav-link" href="{$conf->action_root}KredytCompute">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kalkulator
+                            </a>
+                            <a class="nav-link" href="{$conf->action_root}results">
+                                <div class="sb-nav-link-icon"><i class="fa fa-table"></i></div>
+                                Tabela wyników
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
                             <div class="sb-sidenav-menu-heading"></div>

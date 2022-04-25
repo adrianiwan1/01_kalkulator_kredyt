@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-25 21:18:19
+/* Smarty version 3.1.30, created on 2022-04-26 00:15:45
   from "C:\xampp\htdocs\01_kalkulator_kredyt\app\views\KredytView.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6266f3fbce34e5_95927801',
+  'unifunc' => 'content_62671d914457d9_83960842',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af29cb79fcf58b72c08aff0a7acac1e3575eb293' => 
     array (
       0 => 'C:\\xampp\\htdocs\\01_kalkulator_kredyt\\app\\views\\KredytView.tpl',
-      1 => 1650914295,
+      1 => 1650924940,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_6266f3fbce34e5_95927801 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62671d914457d9_83960842 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3006774706266f3fbc7e7f3_97642742', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39178706462671d91416315_83281554', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1068688346266f3fbce0b33_80125708', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_29544734762671d91444783_07670112', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_3006774706266f3fbc7e7f3_97642742 extends Smarty_Internal_Block
+class Block_39178706462671d91416315_83281554 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_1068688346266f3fbce0b33_80125708 extends Smarty_Internal_Block
+class Block_29544734762671d91444783_07670112 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -97,9 +97,15 @@ logout">Logout</a></li>
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Okno główne</div>
-                            <a class="nav-link">
+                            <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+KredytCompute">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kalkulator
+                            </a>
+                            <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+results">
+                                <div class="sb-nav-link-icon"><i class="fa fa-table"></i></div>
+                                Tabela wyników
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
                             <div class="sb-sidenav-menu-heading"></div>

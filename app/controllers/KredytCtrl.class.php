@@ -1,5 +1,9 @@
 <?php
 namespace app\controllers;
+
+use DateTime;
+use PDOException;
+
 //require_once $conf->root_path.'/lib/Smarty/Smarty.class.php';
 //require_once $conf->root_path.'/lib/Messages.class.php';
 //require_once $conf->root_path.'/app/kredyt/KredytForm.class.php';
@@ -89,34 +93,18 @@ class KredytCtrl
 					$calosc = ($this->form->kw * $this->form->procent) + $this->form->kw;
 					$this->result->result = $calosc/($this->form->lat * 12);			
 					getMessages()->addInfo('Wykonano obliczenia.');
-
 					try{
-						$database = new \Medoo\Medoo([
-							'database_type' => 'mysql',
-							'database_name' => 'kalk',
-							'server' => 'localhost',
-							'username' => 'root',
-							'password' => '',
-							'charset' => 'utf8',
-							'collation' => 'utf8_polish_ci',
-							'port' => 3306,
-							'option' =>[
-								\PDO::ATTR_CASE => \PDO::CASE_NATURAL,
-								\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
-							]
-							]);
-
-							$database->insert("wynik",[
-								"kwota" => $this->form->kw,
-								"lat" => $this->form->lat,
-								"procent" => $this->form->procent,
-								"rata" => $this->result->result,
-								"data" => date("Y-m-d H:i:s")
-							]);
-					}catch(\PDOException $ex){
-						getMessages()->addError("DB Error: ".$ex-getMessage());
+						getDB()->insert("wynik", [
+							"kwota" => $this->form->kw,
+							"lat" => $this->form->lat,
+							"procent" => $this->form->procent,
+							"rata" => $this->result->result,
+							"data" => date("Y-m-d H:i:s")
+						]);
+					}catch(PDOException $e){
+						getMessages()->addError('Wystąpił nieoczekiwany błąd podczas zapisu rekordu');
+				if (getConf()->debug) getMessages()->addError($e->getMessage());
 					}
-
 				}else{
 					getMessages()->addError('Tylko administrator może wykonać tę operację');
 					

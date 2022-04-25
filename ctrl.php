@@ -31,5 +31,6 @@ getRouter()->addRoute('KredytShow',    'KredytCtrl',  ['user','admin']);
 getRouter()->addRoute('KredytCompute', 'KredytCtrl',  ['user','admin']);
 getRouter()->addRoute('login',       'LoginCtrl');
 getRouter()->addRoute('logout',      'LoginCtrl', ['user','admin']);
+getRouter()->addRoute('results','ResultsCtrl', ['user','admin']);
 
 getRouter()->go();
