@@ -46,7 +46,7 @@ switch ($action) {
 		control('app\\controllers', 'KredytCtrl',		'generateView', ['user','admin']);
 	case 'login': 
 		control('app\\controllers', 'LoginCtrl',	'doLogin');
-	case 'calcCompute' : 
+	case 'KredytCompute' : 
 		//zamiast pierwszego parametru można podać null lub '' wtedy zostanie przyjęta domyślna przestrzeń nazw dla kontrolerów
 		control(null, 'KredytCtrl',	'process',		['user','admin']);
 	case 'logout' : 

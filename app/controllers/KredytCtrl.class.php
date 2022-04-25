@@ -75,24 +75,25 @@ class KredytCtrl
 		if ($this->validate()) {
 				if (inRole('admin'))
 				{
-			//konwersja parametrów na int
-			$this->form->kw = floatval($this->form->kw);
-			$this->form->lat = intval($this->form->lat);
-            $this->form->procent = intval($this->form->procent);
-			getMessages()->addInfo('Parametry poprawne.');
-				
-			//wykonanie operacji
+					//konwersja parametrów na int
+					$this->form->kw = floatval($this->form->kw);
+					$this->form->lat = intval($this->form->lat);
+					$this->form->procent = intval($this->form->procent);
+					getMessages()->addInfo('Parametry poprawne.');
+						
+					//wykonanie operacji
 
 
-            //$pr = $procent * 0.01;
+					//$pr = $procent * 0.01;
 
-            $calosc = ($this->form->kw * $this->form->procent) + $this->form->kw;
-            $this->result->result = $calosc/($this->form->lat * 12);			
-			
+					$calosc = ($this->form->kw * $this->form->procent) + $this->form->kw;
+					$this->result->result = $calosc/($this->form->lat * 12);			
+					getMessages()->addInfo('Wykonano obliczenia.');
 				}else{
 					getMessages()->addError('Tylko administrator może wykonać tę operację');
+					
 				}
-				getMessages()->addInfo('Wykonano obliczenia.');
+				
 		}
 		
 		$this->generateView();
@@ -103,7 +104,7 @@ class KredytCtrl
 		
 		global $user;
 
-		getSmarty()->assign('user',$user);
+		getSmarty()->assign('user',unserialize($_SESSION['user']));
 				
 		getSmarty()->assign('page_title','Super kalkulator');
 

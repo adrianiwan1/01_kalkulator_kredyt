@@ -56,8 +56,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        <?php echo $_SESSION['role'] ?>
+                        <div class="small">Zalogowany jako: {$user->login}</div>
+                        <div class="small">Rola: {$user->role}</div>
                     </div>
                 </nav>
             </div>

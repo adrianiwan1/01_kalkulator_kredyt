@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-05 10:51:30
+/* Smarty version 3.1.30, created on 2022-04-25 21:18:19
   from "C:\xampp\htdocs\01_kalkulator_kredyt\app\views\KredytView.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_624c03128b8a91_19564077',
+  'unifunc' => 'content_6266f3fbce34e5_95927801',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af29cb79fcf58b72c08aff0a7acac1e3575eb293' => 
     array (
       0 => 'C:\\xampp\\htdocs\\01_kalkulator_kredyt\\app\\views\\KredytView.tpl',
-      1 => 1649148668,
+      1 => 1650914295,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_624c03128b8a91_19564077 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6266f3fbce34e5_95927801 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1136221601624c031285ef27_97147813', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3006774706266f3fbc7e7f3_97642742', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1279130227624c03128b5ed3_74057051', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1068688346266f3fbce0b33_80125708', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_1136221601624c031285ef27_97147813 extends Smarty_Internal_Block
+class Block_3006774706266f3fbc7e7f3_97642742 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_1279130227624c03128b5ed3_74057051 extends Smarty_Internal_Block
+class Block_1068688346266f3fbce0b33_80125708 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -106,8 +106,10 @@ logout">Logout</a></li>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        <?php echo '<?php ';?>echo $_SESSION['role'] <?php echo '?>';?>
+                        <div class="small">Zalogowany jako: <?php echo $_smarty_tpl->tpl_vars['user']->value->login;?>
+</div>
+                        <div class="small">Rola: <?php echo $_smarty_tpl->tpl_vars['user']->value->role;?>
+</div>
                     </div>
                 </nav>
             </div>
