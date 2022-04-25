@@ -9,7 +9,7 @@ require_once 'init.php';
 // Wystarczy już tylko podjąć decyzję co zrobić na podstawie $action.
 
 // Dodatkowo zmieniono organizację kontrolerów i widoków. Teraz wszystkie są w odpowiednio nazwanych folderach w app
-
+/*
 switch ($action) {
 	default : // 'calcView'
 	    // załaduj definicję kontrolera
@@ -37,4 +37,18 @@ switch ($action) {
 		$ctrl = new app\controllers\LoginCtrl();
 		$ctrl->doLogout();
 	break;
+}
+*/
+getConf()->login_action = 'login';
+
+switch ($action) {
+	default :
+		control('app\\controllers', 'KredytCtrl',		'generateView', ['user','admin']);
+	case 'login': 
+		control('app\\controllers', 'LoginCtrl',	'doLogin');
+	case 'calcCompute' : 
+		//zamiast pierwszego parametru można podać null lub '' wtedy zostanie przyjęta domyślna przestrzeń nazw dla kontrolerów
+		control(null, 'KredytCtrl',	'process',		['user','admin']);
+	case 'logout' : 
+		control(null, 'LoginCtrl',	'doLogout',		['user','admin']);
 }

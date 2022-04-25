@@ -41,4 +41,7 @@ function &getLoader() {
 
 require_once 'core/functions.php';
 
+session_start();
+$conf->roles = isset($_SESSION['_roles']) ? unserialize($_SESSION['_roles']) : array(); //wczytaj role
+
 $action = getFromRequest('action');

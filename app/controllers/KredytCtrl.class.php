@@ -73,7 +73,8 @@ class KredytCtrl
 		$this->getparams();
 		
 		if ($this->validate()) {
-				
+				if (inRole('admin'))
+				{
 			//konwersja parametrów na int
 			$this->form->kw = floatval($this->form->kw);
 			$this->form->lat = intval($this->form->lat);
@@ -87,7 +88,11 @@ class KredytCtrl
 
             $calosc = ($this->form->kw * $this->form->procent) + $this->form->kw;
             $this->result->result = $calosc/($this->form->lat * 12);			
-			getMessages()->addInfo('Wykonano obliczenia.');
+			
+				}else{
+					getMessages()->addError('Tylko administrator może wykonać tę operację');
+				}
+				getMessages()->addInfo('Wykonano obliczenia.');
 		}
 		
 		$this->generateView();
